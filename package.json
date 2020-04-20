@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss src/css/tailwind.css -o public/build/tailwind.css"
+    "start": "npm run build",
+    "dev": "NODE_ENV=development npm run build:css && npm run serve",
+    "build": "NODE_ENV=production npm run build:css",
+    "serve": "npx live-server public",
+    "build:css": "postcss src/css/tailwind.css -o public/build/tailwind.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.2",
     "autoprefixer": "^9.7.6",
     "live-server": "^1.2.1",
     "postcss-cli": "^7.1.0",
