@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:css",
-    "build:css": "NODE_ENV=production postcss src/css/tailwind.css -o public/build/tailwind.css"
+    "start": "npm run build",
+    "build": "tailwindcss -i ./src/css/tailwind.css -o ./public/build/tailwind.css --minify"
   },
   "keywords": [],
   "author": "Jorge Vera",
